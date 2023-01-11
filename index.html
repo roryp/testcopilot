@@ -29,9 +29,8 @@ embed a video tag with a video with called video.mp4 and a captions file called 
 <video width="320" height="240" controls>
   <source src="video/video.mp4" type="video/mp4">
   <track src="video/video.vtt" kind="captions" label="English captions" srclang="en" default>
-  Your browser does not support the video tag.
+  <p>Your browser does not support the video tag.</p>
 </video>
-<p></p>
 
 <!-- form tag with -->
 
@@ -48,9 +47,9 @@ embed a video tag with a video with called video.mp4 and a captions file called 
     <!-- javascript function to alert the form data -->
 
     function printFormData() {
-      var form = document.querySelector('form');
-      var formData = new FormData(form);
-      for (var entry of formData.entries()) {
+      let form = document.querySelector('form');
+      let formData = new FormData(form);
+      for (let entry of formData.entries()) {
         alert(entry[0] + ', ' + entry[1]);
       }
     }
@@ -58,13 +57,6 @@ embed a video tag with a video with called video.mp4 and a captions file called 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
