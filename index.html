@@ -15,13 +15,16 @@
 
 <body>
 
-<!-- embed a video tag with a video with called video.mp4 and a captions file called video.vtt -->
-<video width="320" height="240" controls title="A video demonstration on how to use the product."
-       alt="A video demonstration on how to use the product.">
+<!--
+embed a video tag with a video with called video.mp4 and a captions file called video.vtt
+-->
+<video width="320" height="240" controls title="A video demonstration on how to use the product.">
   <source src="video/video.mp4" type="video/mp4">
   <track src="video/video.vtt" kind="captions" label="English captions" srclang="en" default>
   <p>Alternative text for the video: "Video demonstration on how to use the product."</p>
 </video>
+
+<!-- form tag with -->
 
 <form id="myForm">
   <fieldset>
@@ -42,6 +45,8 @@
 <script>
   let form = document.getElementById("myForm");
   form.addEventListener("submit", printFormData);
+
+  <!-- javascript function to alert the form data -->
 
   function printFormData() {
     let form = document.querySelector('form');
