@@ -23,11 +23,17 @@
 </head>
 
 <body>
+<!--
+embed a video tag with a video with called video.mp4 and a captions file called video.vtt
+-->
 <video width="320" height="240" controls>
   <source src="video/video.mp4" type="video/mp4">
   <track src="video/video.vtt" kind="captions" label="English captions" srclang="en" default>
   Your browser does not support the video tag.
 </video>
+</p>
+
+<!-- form tag with -->
 
 <form onsubmit="printFormData()">
   <label for="name">Name</label>
@@ -37,6 +43,8 @@
   <button type="submit">Submit</button>
 </form>
   <script>
+    <!-- javascript function to alert the form data -->
+
     function printFormData() {
       var form = document.querySelector('form');
       var formData = new FormData(form);
