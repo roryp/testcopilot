@@ -16,14 +16,14 @@
 <body>
 
 <!-- embed a video tag with a video with called video.mp4 and a captions file called video.vtt -->
-<video width="320" height="240" controls title="A video demonstration on how to use the product.">
+<video width="320" height="240" controls title="A video demonstration on how to use the product."
+       alt="A video demonstration on how to use the product.">
   <source src="video/video.mp4" type="video/mp4">
   <track src="video/video.vtt" kind="captions" label="English captions" srclang="en" default>
-  <p>Your browser does not support the video tag.</p>
   <p>Alternative text for the video: "Video demonstration on how to use the product."</p>
 </video>
 
-<form onsubmit="printFormData()">
+<form id="myForm">
   <fieldset>
     <legend>Please fill out the form below:</legend>
     <label for="name">Name: <span class="required">*</span></label>
@@ -32,12 +32,17 @@
     <label for="email">Email: <span class="required">*</span></label>
     <input type="email" name="email" id="email" placeholder="Email" required aria-label="Email" aria-required="true">
     <div class="form-help">Please make sure to enter a valid email address</div>
-    <div class="form-required-fields-description"> Fields marked with <span class="required">*</span> are required.</div>
+    <div class="form-required-fields-description"> Fields marked with <span class="required">*</span> are required.
+    </div>
     <button type="submit" value="submit">Submit</button>
   </fieldset>
 </form>
-<div class="form-submit-alert" role="alert"></div>
+<div class="form-submit-alert" id="form-submit-alert" role="alert" aria-live="polite"></div>
+
 <script>
+  let form = document.getElementById("myForm");
+  form.addEventListener("submit", printFormData);
+
   function printFormData() {
     let form = document.querySelector('form');
     let formData = new FormData(form);
