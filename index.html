@@ -4,59 +4,51 @@
 <head>
   <meta charset="utf-8">
   <title>Rory's test</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fafafa">
+  <meta name="description" content="This page contains a video demonstration on how to use the product.">
+
 </head>
 
 <body>
-<!--
-embed a video tag with a video with called video.mp4 and a captions file called video.vtt
--->
-<video width="320" height="240" controls>
+
+<!-- embed a video tag with a video with called video.mp4 and a captions file called video.vtt -->
+<video width="320" height="240" controls title="A video demonstration on how to use the product.">
   <source src="video/video.mp4" type="video/mp4">
   <track src="video/video.vtt" kind="captions" label="English captions" srclang="en" default>
   <p>Your browser does not support the video tag.</p>
+  <p>Alternative text for the video: "Video demonstration on how to use the product."</p>
 </video>
 
-<!-- form tag with -->
-
 <form onsubmit="printFormData()">
-  <label>
-    <input type="text" name="name" placeholder="Name">
-  </label>
-  <label>
-    <input type="text" name="email" placeholder="Email">
-  </label>
-  <button type="submit">Submit</button>
-</form>
-  <script>
-    <!-- javascript function to alert the form data -->
+  <fieldset>
+    <legend>Please fill out the form below:</legend>
+    <label for="name">Name: <span class="required">*</span></label>
+    <input type="text" name="name" id="name" placeholder="Name" required aria-label="Name" aria-required="true">
 
-    function printFormData() {
-      let form = document.querySelector('form');
-      let formData = new FormData(form);
-      for (let entry of formData.entries()) {
-        alert(entry[0] + ', ' + entry[1]);
-      }
+    <label for="email">Email: <span class="required">*</span></label>
+    <input type="email" name="email" id="email" placeholder="Email" required aria-label="Email" aria-required="true">
+    <div class="form-help">Please make sure to enter a valid email address</div>
+    <div class="form-required-fields-description"> Fields marked with <span class="required">*</span> are required.</div>
+    <button type="submit" value="submit">Submit</button>
+  </fieldset>
+</form>
+<div class="form-submit-alert" role="alert"></div>
+<script>
+  function printFormData() {
+    let form = document.querySelector('form');
+    let formData = new FormData(form);
+    for (let entry of formData.entries()) {
+      alert(entry[0] + ', ' + entry[1]);
     }
-  </script>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  }
+</script>
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>
