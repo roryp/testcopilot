@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Rory's test</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<video width="320" height="240" controls>
+  <source src="video/video.mp4" type="video/mp4">
+  <track src="video/video.vtt" kind="captions" label="English captions" srclang="en" default>
+  Your browser does not support the video tag.
+</video>
+
+<form onsubmit="printFormData()">
+  <label for="name">Name</label>
+  <input type="text" name="name" placeholder="Name">
+  <label for="email">Email</label>
+  <input type="text" name="email" placeholder="Email">
+  <button type="submit">Submit</button>
+</form>
+  <script>
+    function printFormData() {
+      var form = document.querySelector('form');
+      var formData = new FormData(form);
+      for (var entry of formData.entries()) {
+        alert(entry[0] + ', ' + entry[1]);
+      }
+    }
+  </script>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
