@@ -31,15 +31,17 @@ embed a video tag with a video with called video.mp4 and a captions file called 
   <track src="video/video.vtt" kind="captions" label="English captions" srclang="en" default>
   Your browser does not support the video tag.
 </video>
-</p>
+<p></p>
 
 <!-- form tag with -->
 
 <form onsubmit="printFormData()">
-  <label for="name">Name</label>
-  <input type="text" name="name" placeholder="Name">
-  <label for="email">Email</label>
-  <input type="text" name="email" placeholder="Email">
+  <label>
+    <input type="text" name="name" placeholder="Name">
+  </label>
+  <label>
+    <input type="text" name="email" placeholder="Email">
+  </label>
   <button type="submit">Submit</button>
 </form>
   <script>
