@@ -30,17 +30,17 @@ embed a video tag with a video with called video.mp4 and a captions file called 
   <fieldset>
     <legend>Please fill out the form below:</legend>
     <label for="name">Name: <span class="required">*</span></label>
-    <input type="text" name="name" id="name" placeholder="Name" required aria-label="Name" aria-required="true">
+    <input type="text" name="name" id="name" placeholder="Name" required aria-label="Name" aria-required="true" tabindex="0">
 
     <label for="email">Email: <span class="required">*</span></label>
-    <input type="email" name="email" id="email" placeholder="Email" required aria-label="Email" aria-required="true">
-    <div class="form-help">Please make sure to enter a valid email address</div>
-    <div class="form-required-fields-description"> Fields marked with <span class="required">*</span> are required.
+    <input type="email" name="email" id="email" placeholder="Email" required aria-label="Email" aria-required="true" tabindex="0">
+    <div class="form-help" id="email-help" tabindex="-1">Please make sure to enter a valid email address</div>
+    <div class="form-required-fields-description" tabindex="-1"> Fields marked with <span class="required">*</span> are required.
     </div>
-    <button type="submit" value="submit">Submit</button>
+    <button type="submit" value="submit" tabindex="0">Submit</button>
   </fieldset>
 </form>
-<div class="form-submit-alert" id="form-submit-alert" role="alert" aria-live="polite"></div>
+<div class="form-submit-alert" id="form-submit-alert" role="alert" aria-live="polite" tabindex="-1"></div>
 
 <script>
   let form = document.getElementById("myForm");
