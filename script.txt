@@ -1,3 +1,26 @@
+Installation
+
+Template html
+
+Video indexer
+	Past video and captions into video folder
+
+Embed a video
+
+<!--
+embed a video tag with a video with called magnifier_sample_video.mp4 and a captions file called magnifier_sample_video.vtt
+-->
+
+show copilot window
+
+<!-- <form> tag with name, email and message fields -->
+<form id="myForm" onSubmit="return alertform()>
+
+<!-- javascript function to alert the form data -->
+
+
+modify the following code to be accessible - add labels, aria tags and tabindex
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -27,35 +50,26 @@ embed a video tag with a video with called magnifier_sample_video.mp4 and a capt
 
 <!-- form -->
 
-<form id="myForm">
+<form id="myForm" onSubmit="return alertform()">
   <fieldset>
-    <legend>Please fill out the form below:</legend>
     <label for="name">Name: <span class="required">*</span></label>
-    <input type="text" name="name" id="name" placeholder="Name" required aria-label="Name" aria-required="true" tabindex="0">
-
+    <input type="text" name="name" id="name">
     <label for="email">Email: <span class="required">*</span></label>
-    <input type="email" name="email" id="email" placeholder="Email" required aria-label="Email" aria-required="true" tabindex="0">
-    <div class="form-help" id="email-help" tabindex="-1">Please make sure to enter a valid email address</div>
-    <div class="form-required-fields-description" tabindex="-1"> Fields marked with <span class="required">*</span> are required.
-    </div>
-    <button type="submit" value="submit" tabindex="0">Submit</button>
+    <input type="email" name="email" id="email">
+    <button type="submit" value="submit">Submit</button>
   </fieldset>
 </form>
-<div class="form-submit-alert" id="form-submit-alert" role="alert" aria-live="polite" tabindex="-1"></div>
 
 <script>
-  let form = document.getElementById("myForm");
-  form.addEventListener("submit", printFormData);
 
   <!-- javascript function to alert the form data -->
 
-  function printFormData() {
-    let form = document.querySelector('form');
-    let formData = new FormData(form);
-    for (let entry of formData.entries()) {
-      alert(entry[0] + ', ' + entry[1]);
-    }
+  function alertform() {
+    alert(document.getElementById("name").value + " " + document.getElementById("email").value);
   }
+
+
+
 </script>
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
 <script src="js/plugins.js"></script>
@@ -63,3 +77,4 @@ embed a video tag with a video with called magnifier_sample_video.mp4 and a capt
 </body>
 
 </html>
+
