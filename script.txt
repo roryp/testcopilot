@@ -1,8 +1,10 @@
-Installation
+Installation and signup for copilot and intellij/vscode
 
-Template html
+Template html project
 
-Video indexer
+Run application insights
+
+https://www.videoindexer.ai/ caption generation
 	Past video and captions into video folder
 
 Embed a video
@@ -11,15 +13,17 @@ Embed a video
 embed a video tag with a video with called magnifier_sample_video.mp4 and a captions file called magnifier_sample_video.vtt
 -->
 
-show copilot window
+Show copilot window
 
 <!-- <form> tag with name, email and message fields -->
 <form id="myForm" onSubmit="return alertform()>
 
 <!-- javascript function to alert the form data -->
 
+Run application insights
+Fix the label issues
 
-modify the following code to be accessible - add labels, aria tags and tabindex
+Modify the following code to be accessible - add labels, aria tags and tabindex
 
 <!doctype html>
 <html class="no-js" lang="en">
